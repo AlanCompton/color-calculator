@@ -1,30 +1,20 @@
 const prompt = require(`prompt-sync`)({signt: true});
 
-let init = prompt(`Do you wish to combine or deconstruct colors? `);
+let init = prompt(`Enter a color you would like to deconstruct or colors you would like to combine: `);
+let x = init.toLowerCase();
 
-if(init === `combine`){
-    let color1 = prompt(`What is your first color to combine? `);
-    let color2 = prompt(`What is your second color to combine? `);
-if(color1 === `red` && color2 === `blue`){
-    console.log(`Your combined colors of red and blue equal to purople.`);
-}else if(color1 === 'red' && color2 === `yellow`){
-    console.log(`Your combined colors of red and yellow equal to orange.`);
-}else if(color1 === `blue` && color2 === `yellow`){
-    console.log(`Your combined colors of blue and yellow equal to green.`);
+if(x === "purple"){
+    console.log(`Deconstructed: red + blue`);
+}else if(x === "orange"){
+    console.log(`Deconstructed: red + yellow`);
+}else if(x === "green"){
+    console.log(`Deconstructed: blue + yellow`);
+}else if(x === "red blue" || x === "blue red" || x === "red + blue" || x === "blue + red"){
+    console.log(`Combined: purple`);
+}else if(x === "red yellow" || x === "yellow red" || x === "red + yellow" || x === "yellow + red"){
+    console.log(`Combined: orange`);
+}else if(x === "yellow blue" || x === "blue yellow" || x === "yellow + blue" || x === "blue + yellow"){
+    console.log(`Combined: green`);
 }else{
     console.log(`error`);
-}
-}
-
-if(init === `deconstruct`){
-    let initclr = prompt(`Which color would you like to deconstruct? purple, orange, green - `);
-if(initclr === `purple`){
-    console.log(`The deconstructed equivelant to purple is red combined with blue.`);
-}else if(initclr === `orange`){
-    console.log(`The deconstructed equivelant to orange is red combined with yellow.`);
-}else if(initclr === `green`){
-    console.log(`The deconstructed equivelant to green is blue combined with yellow.`);
-}else{
-    console.log(`error`);
-}
 }
